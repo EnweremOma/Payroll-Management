@@ -14,7 +14,7 @@ export default function Home() {
             Chat App Members
           </h1>
         </div>
-        <div className="bg-white mx-12 rounded-md">
+        <div className="bg-white mx-12 rounded-md border-2 border-chatapp-purple">
           
           <h1>hello <br />fgdhgfjhgkjkf</h1>
         </div>

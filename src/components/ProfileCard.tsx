@@ -1,18 +1,17 @@
 import React from "react";
 import { FiMail } from "react-icons/fi";
 import { E_CATEGORY } from "../interfaces/Staff";
+import { Profile } from "../interfaces/Staff";
 
-interface StaffInfo {
-  name: string;
-  department: string;
-  imgURL: string;
-  category: E_CATEGORY;
-  courseTitle: string;
-  email: string;
-  about: string;
-}
-
-function ProfileCard() {
+function ProfileCard({
+  name,
+  department,
+  imgURL,
+  category,
+  courseTitle,
+  email,
+  about,
+}: Profile) {
   const src =
     "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "../../components/Sidebar";
-import ProfileCard from "../../components/ProfileCard";
+//import ProfileCard from "../../components/ProfileCard";
 import ListCard from "../../components/ListCard";
 import { E_CATEGORY } from "../../interfaces/Staff";
 import { staffList } from '../../Data/Staff';

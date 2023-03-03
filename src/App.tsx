@@ -8,6 +8,7 @@ import Messages from "./pages/Messages/Messages";
 import Staff from "./pages/Staff/Staff";
 import Students from "./pages/Students/Students";
 import Settings from "./pages/Settings/Settings";
+import SignUp from './pages/Login/SignUp';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={<Home />} />
           <Route path="/messages" element={<Messages />} />
           <Route path="/staff" element={<Staff />} />

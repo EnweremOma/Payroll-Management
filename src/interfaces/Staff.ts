@@ -1,8 +1,8 @@
 export enum E_CATEGORY {
-  ADMIN = "admin",
-  LECTURER = "lecturer",
-  STUDENT = "student",
-  GUEST = "guest",
+  ADMIN = "Admin",
+  LECTURER = "Lecturer",
+  STUDENT = "Student",
+  GUEST = "Guest",
 }
 
 export interface Profile {

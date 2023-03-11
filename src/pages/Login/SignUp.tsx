@@ -1,31 +1,33 @@
 import { useState } from "react";
 import { SignUpInput } from "../../interfaces/SignUp";
 import { E_CATEGORY } from "../../interfaces/Staff";
+import axios from "axios";
+//import { BASE_URL } from "../../routes/useUrls";
 
 const defaultFormData: SignUpInput = {
   firstName: "",
   lastName: "",
   email: "",
+  phoneNumber: "",
   category: E_CATEGORY.STUDENT,
   department: "",
   courseTitle: "",
 };
 
 const SignUp = () => {
-  const [formData, setFormData] = useState(defaultFormData);
-  const { firstName, lastName, email, category, department, courseTitle } =
-    formData;
+  const [registrationData, setRegistrationData] = useState(defaultFormData);
+  const { firstName, lastName, email, phoneNumber, category, department, courseTitle } =
+    registrationData;
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.id]: e.target.value,
-    }));
+    setRegistrationData({ ...registrationData, [e.target.id]: e.target.value });
   };
-
+  //"http://localhost:8000/users/createUser"
+ // const createUserUrl = `${BASE_URL}/users/createUser`;
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
+    console.log(registrationData);
+    axios.post("http://localhost:8000/users/createUser",  registrationData );
     //e.target.reset();
   };
 
@@ -97,6 +99,24 @@ const SignUp = () => {
           </div>
           <div className="mb-4 mx-8">
             <label
+              htmlFor="phoneNumber"
+              className="block text-chatapp-purple font-medium mb-2"
+            >
+              Phone Number:
+            </label>
+            <input
+              type="phoneNumber"
+              id="phoneNumber"
+              name="phoneNumber"
+              placeholder="phoneNumber"
+              value={phoneNumber}
+              required
+              onChange={onChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div className="mb-4 mx-8">
+            <label
               htmlFor="category"
               className="block text-chatapp-purple font-medium mb-2"
             >
@@ -108,7 +128,7 @@ const SignUp = () => {
               placeholder=""
               value={category}
               required
-              onChange={e=>(e.target.value)}
+              onChange={(e) => e.target.value}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             >
               <option>Select category</option>

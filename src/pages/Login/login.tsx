@@ -24,7 +24,7 @@ const Login: React.FC = () => {
               Email
             </label>
             <input
-              className="border border-chatapp-purple p-2 w-full px-3 py-2 rounded-lg shadow-sm"
+              className="border-2 border-chatapp-purple p-2 w-full px-3 py-2 rounded-lg shadow-sm"
               type="email"
               id="email"
               value={email}
@@ -46,15 +46,30 @@ const Login: React.FC = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="text-center text-#611076 font-medium text-sm">
+
+          <div className="flex items-center justify-between">
+            <button
+              className="bg-chatapp-purple hover:bg-purple-200 text-white hover:text-purple-900 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="button"
+            >
+              Login
+            </button>
+            <a
+              className="inline-block align-baseline font-bold text-sm text-chatapp-purple hover:text-purple-400"
+              href="/#"
+            >
+              Forgot Password?
+            </a>
+          </div>
+          <div className="text-center text-gray-900 font-medium text-sm pt-2">
             Don't have an account?
-            <a href="forgotPassword" className="font-medium text-#611076 ml-1">
+            <a
+              href="http://localhost:3000/Signup"
+              className="font-medium ml-1 hover:text-gray-600"
+            >
               Create account
             </a>
           </div>
-          <button className="bg-chatapp-purple hover:bg-purple-200 text-white hover:text-purple-900 font-bold py-2 px-4 rounded-full">
-            Login
-          </button>
         </form>
       </div>
     </div>

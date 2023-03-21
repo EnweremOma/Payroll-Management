@@ -1,4 +1,4 @@
-import { E_CATEGORY } from "./Staff";
+import { E_CATEGORY } from "./User";
 export interface SignUpInput {
   firstName: string;
   lastName: string;

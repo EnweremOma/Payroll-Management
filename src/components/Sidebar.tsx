@@ -14,11 +14,11 @@ export default function Sidebar() {
   const [open, setOpen] = useState(true);
 
   return (
-    <aside className="flex">
+    <aside className="flex flex-col">
       <div
-        className={`bg-chatapp-purple h-screen p-5 pt-8 ${
+        className={`bg-chatapp-purple h-[calc(100vh_-_2rem)] p-5 pt-8 rounded-lg ${
           open ? "w-72" : "w-20"
-        } duration-300 relative`}
+        } duration-300 relative ease-in-out`}
       >
         <BsArrowLeftShort
           className={`bg-white fill-chatapp-purple text-3xl rounded-full absolute -right-3 top-9 border border-chatapp-purple cursor-pointer 

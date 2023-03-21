@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SignUpInput } from "../../interfaces/SignUp";
-import { E_CATEGORY } from "../../interfaces/Staff";
+import { E_CATEGORY } from "../../interfaces/User";
 import axios from "axios";
 //import { BASE_URL } from "../../routes/useUrls";
 
@@ -16,18 +16,25 @@ const defaultFormData: SignUpInput = {
 
 const SignUp = () => {
   const [registrationData, setRegistrationData] = useState(defaultFormData);
-  const { firstName, lastName, email, phoneNumber, category, department, courseTitle } =
-    registrationData;
+  const {
+    firstName,
+    lastName,
+    email,
+    phoneNumber,
+    category,
+    department,
+    courseTitle,
+  } = registrationData;
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRegistrationData({ ...registrationData, [e.target.id]: e.target.value });
   };
   //"http://localhost:8000/users/createUser"
- // const createUserUrl = `${BASE_URL}/users/createUser`;
+  // const createUserUrl = `${BASE_URL}/users/createUser`;
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(registrationData);
-    axios.post("http://localhost:8000/users/createUser",  registrationData );
+    axios.post("http://localhost:8000/users/createUser", registrationData);
     //e.target.reset();
   };
 
@@ -182,6 +189,7 @@ const SignUp = () => {
               Submit
             </button>
           </div>
+          
         </form>
       </div>
       <div className="bg-student-img bg-no-repeat bg-cover flex bg-gray-900/10 z-10"></div>

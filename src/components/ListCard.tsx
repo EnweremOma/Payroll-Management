@@ -18,7 +18,7 @@ function ListCard({
       onClick={() => {
         setSearchParams({ userId: _id as string });
       }}
-      className="bg-white p-2 flex flex-row border border-chatapp-lilac"
+      className="bg-white p-2 flex flex-row border border-payroll-lilac"
     >
       <div>
         <img src={imgURL} alt="avatar" className="h-16 w-16 rounded-full" />

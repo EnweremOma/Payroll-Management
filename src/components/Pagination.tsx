@@ -36,19 +36,19 @@ const Pagination: React.FC<Props> = ({
         containerClassName={"flex justify-end my-4"}
         pageClassName={"mr-2"}
         pageLinkClassName={
-          "rounded-md bg-chatapp-purple text-white hover:text-chatapp-purple hover:bg-chatapp-lilac px-3 py-2"
+          "rounded-md bg-payroll-purple text-white hover:text-payroll-purple hover:bg-payroll-lilac px-3 py-2"
         }
         previousClassName={
-          "rounded-md bg-chatapp-purple text-white hover:text-chatapp-purple hover:bg-chatapp-lilac px-3 py-2 mr-2"
+          "rounded-md bg-payroll-purple text-white hover:text-payroll-purple hover:bg-payroll-lilac px-3 py-2 mr-2"
         }
         previousLinkClassName={"font-bold"}
         nextClassName={
-          "rounded-md bg-chatapp-purple text-white hover:text-chatapp-purple hover:bg-chatapp-lilac px-3 py-2 ml-2"
+          "rounded-md bg-payroll-purple text-white hover:text-payroll-purple hover:bg-payroll-lilac px-3 py-2 ml-2"
         }
         nextLinkClassName={"font-bold"}
         breakClassName={"mr-2"}
         breakLinkClassName={
-          "rounded-md bg-chatapp-purple text-white hover:text-chatapp-purple hover:bg-chatapp-lilac px-3 py-2"
+          "rounded-md bg-payroll-purple text-white hover:text-payroll-purple hover:bg-payroll-lilac px-3 py-2"
         }
         activeClassName={"bg-blue-400 text-white font-bold"}
         activeLinkClassName={

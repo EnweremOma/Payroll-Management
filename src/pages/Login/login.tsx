@@ -10,7 +10,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="h-screen bg-chatapp-lilac flex items-center justify-center">
+    <div className="h-screen bg-payroll-lilac flex items-center justify-center">
       <div className="place-content-center px-6 rounded-lg sm:px-10 mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <form
           className="bg-white-bg p-6 rounded-lg border-4 border-purple-900"
@@ -24,7 +24,7 @@ const Login: React.FC = () => {
               Email
             </label>
             <input
-              className="border-2 border-chatapp-purple p-2 w-full px-3 py-2 rounded-lg shadow-sm"
+              className="border-2 border-payroll-purple p-2 w-full px-3 py-2 rounded-lg shadow-sm"
               type="email"
               id="email"
               value={email}
@@ -39,7 +39,7 @@ const Login: React.FC = () => {
               Password
             </label>
             <input
-              className="border-2 border-chatapp-purple p-2 w-full px-3 py-2 rounded-lg shadow-sm"
+              className="border-2 border-payroll-purple p-2 w-full px-3 py-2 rounded-lg shadow-sm"
               type="password"
               id="password"
               value={password}
@@ -49,13 +49,13 @@ const Login: React.FC = () => {
 
           <div className="flex items-center justify-between">
             <button
-              className="bg-chatapp-purple hover:bg-purple-200 text-white hover:text-purple-900 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-payroll-purple hover:bg-purple-200 text-white hover:text-purple-900 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
             >
               Login
             </button>
             <a
-              className="inline-block align-baseline font-bold text-sm text-chatapp-purple hover:text-purple-400"
+              className="inline-block align-baseline font-bold text-sm text-payroll-purple hover:text-purple-400"
               href="/#"
             >
               Forgot Password?

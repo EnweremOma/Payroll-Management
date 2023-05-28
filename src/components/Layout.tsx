@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar";
 const Layout: React.FC<LayoutTypes> = ({ className, children }) => {
   return (
     <>
-      <div className="bg-chatapp-lilac relative scroll-smooth bg-cover flex z-10 min-h-screen w-full p-4  grid-cols-[auto_1fr] gap-4 overflow-hidden">
+      <div className="bg-payroll-lilac relative scroll-smooth bg-cover flex z-10 min-h-screen w-full p-4  grid-cols-[auto_1fr] gap-4 overflow-hidden">
         <div className="">
           <Sidebar />
         </div>

@@ -62,11 +62,11 @@ export default function Home() {
     <Layout>
       <div className="w-full">
         <div className="pb-4 z-10 ml-6 pt-4">
-          <h1 className="text-chatapp-purple text-3xl font-bold">
+          <h1 className="text-payroll-purple text-3xl font-bold">
             Chat App Members
           </h1>
         </div>
-        <div className="bg-white mx-6 rounded-md border-2 border-chatapp-purple flex">
+        <div className="bg-white mx-6 rounded-md border-2 border-payroll-purple flex">
           <div className=" w-1/2">
             {displayedUsers.length > 0
               ? displayedUsers.map((user) => (

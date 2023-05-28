@@ -15,9 +15,7 @@ function ProfileCard({
   courseTitle,
   email,
   about,
-}: User)
-
-{
+}: User) {
   return (
     <div className="bg-white rounded-md p-4 w-full">
       <div>
@@ -40,7 +38,7 @@ function ProfileCard({
         <div>{category}</div>
       </div>
       <div id="department" className="flex items-center text-sm text-gray-500">
-        <FiMail className="text-chatapp-purple" />
+        <FiMail className="text-payroll-purple" />
         <h1 className="ml-2">{email}</h1>
       </div>
       <div>
@@ -49,7 +47,7 @@ function ProfileCard({
       <div id="about" className="text-gray-900">
         {about}
       </div>
-      <div className="bg-chatapp-purple rounded-md text-white font-semibold text-lg w-40 hover:text-chatapp-purple hover:bg-chatapp-lilac text-center p-2 mt-2 float-right">
+      <div className="bg-payroll-purple rounded-md text-white font-semibold text-lg w-40 hover:text-payroll-purple hover:bg-payroll-lilac text-center p-2 mt-2 float-right">
         <button onClick={handleClick}>send a message</button>
       </div>
     </div>

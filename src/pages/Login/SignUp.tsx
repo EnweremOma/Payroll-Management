@@ -39,21 +39,21 @@ const SignUp = () => {
   };
 
   return (
-    <div className="h-screen bg-chatapp-lilac bg-cover bg-gray-900/10 z-10">
+    <div className="h-screen bg-payroll-lilac bg-cover bg-gray-900/10 z-10">
       <div className="w-2/4">
         <div className="text-center">
-          <h2 className="text-chatapp-purple font-bold text-3xl py-6">
+          <h2 className="text-payroll-purple font-bold text-3xl py-6">
             Sign Up!
           </h2>
         </div>
         <form
           onSubmit={handleSubmit}
-          className="bg-white mx-20 rounded-md border-2 border-chatapp-purple"
+          className="bg-white mx-20 rounded-md border-2 border-payroll-purple"
         >
           <div className="mb-4 my-6 mx-8">
             <label
               htmlFor="firstName"
-              className="block text-chatapp-purple font-medium mb-2"
+              className="block text-payroll-purple font-medium mb-2"
             >
               First Name:
             </label>
@@ -71,7 +71,7 @@ const SignUp = () => {
           <div className="mb-4 my-6 mx-8">
             <label
               htmlFor="lastName"
-              className="block text-chatapp-purple font-medium mb-2"
+              className="block text-payroll-purple font-medium mb-2"
             >
               Last Name:
             </label>
@@ -89,7 +89,7 @@ const SignUp = () => {
           <div className="mb-4 mx-8">
             <label
               htmlFor="email"
-              className="block text-chatapp-purple font-medium mb-2"
+              className="block text-payroll-purple font-medium mb-2"
             >
               Email:
             </label>
@@ -107,7 +107,7 @@ const SignUp = () => {
           <div className="mb-4 mx-8">
             <label
               htmlFor="phoneNumber"
-              className="block text-chatapp-purple font-medium mb-2"
+              className="block text-payroll-purple font-medium mb-2"
             >
               Phone Number:
             </label>
@@ -125,7 +125,7 @@ const SignUp = () => {
           <div className="mb-4 mx-8">
             <label
               htmlFor="category"
-              className="block text-chatapp-purple font-medium mb-2"
+              className="block text-payroll-purple font-medium mb-2"
             >
               Category:
             </label>
@@ -148,7 +148,7 @@ const SignUp = () => {
           <div className="mb-4 mx-8">
             <label
               htmlFor="department"
-              className="block text-chatapp-purple font-medium mb-2"
+              className="block text-payroll-purple font-medium mb-2"
             >
               Department:
             </label>
@@ -166,7 +166,7 @@ const SignUp = () => {
           <div className="mb-4 mx-8">
             <label
               htmlFor="courseTitle"
-              className="block text-chatapp-purple font-medium mb-2"
+              className="block text-payroll-purple font-medium mb-2"
             >
               Course Title:
             </label>
@@ -184,12 +184,11 @@ const SignUp = () => {
           <div className="">
             <button
               type="submit"
-              className="bg-chatapp-purple hover:bg-active-purple text-white font-bold py-2 px-4 mb-4 ml-8 rounded"
+              className="bg-payroll-purple hover:bg-active-purple text-white font-bold py-2 px-4 mb-4 ml-8 rounded"
             >
               Submit
             </button>
           </div>
-          
         </form>
       </div>
       <div className="bg-student-img bg-no-repeat bg-cover flex bg-gray-900/10 z-10"></div>

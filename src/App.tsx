@@ -3,12 +3,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/login";
-import Groups from "./pages/Groups/Groups";
-import Messages from "./pages/Messages/Messages";
-import Staff from "./pages/Staff/Staff";
-import Students from "./pages/Students/Students";
+import MyAccount from "./pages/MyAccount/MyAccount";
+import MySalary from "./pages/MySalary/MySalary";
 import Settings from "./pages/Settings/Settings";
 import SignUp from './pages/Login/SignUp';
+import Employee from './pages/Employee/EmployeeList';
 
 const App: React.FC = () => {
   return (
@@ -18,10 +17,9 @@ const App: React.FC = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={<Home />} />
-          <Route path="/messages" element={<Messages />} />
-          <Route path="/staff" element={<Staff />} />
-          <Route path="/students" element={<Students />} />
-          <Route path="/groups" element={<Groups />} />
+          <Route path="/my_account" element={<MyAccount />} />
+          <Route path="/employees" element={<Employee />} />
+          <Route path="/my_salary" element={<MySalary />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
       </BrowserRouter>

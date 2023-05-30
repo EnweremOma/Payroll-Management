@@ -5,7 +5,7 @@ import ListCard from "../../components/ListCard";
 import { UserList, User } from "../../interfaces/User";
 import ProfileCard from "../../components/ProfileCard";
 import Layout from "../../components/Layout";
-import Pagination from "../../components/Pagination";
+import Pagination from "../../components/general/Pagination";
 
 export default function Home() {
   const [users, setUsers] = useState<UserList[]>([]);

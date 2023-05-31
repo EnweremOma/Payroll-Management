@@ -26,9 +26,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="h-screen bg-payroll-lilac content-center px-96 pt-24">
+    <div className="h-screen bg-payroll-lilac bg-cover bg-gray-900/10 z-10">
         <div className="text-center">
-          <h2 className="text-payroll-purple font-bold text-5xl py-6">
+          <h2 className="text-payroll-purple font-bold text-3xl py-6">
             Sign Up!
           </h2>
         </div>
@@ -111,10 +111,10 @@ const SignUp = () => {
 
           <div className="mb-4 mx-8">
             <label
-              htmlFor="password"
+              htmlFor="department"
               className="block text-payroll-purple font-medium mb-2"
             >
-              Password:
+              Department:
             </label>
             <input
               type="password"
@@ -127,7 +127,7 @@ const SignUp = () => {
 
           <div className="mb-4 mx-8">
             <label
-              htmlFor="confirmPassword"
+              htmlFor="courseTitle"
               className="block text-payroll-purple font-medium mb-2"
             >
               Confirm password:

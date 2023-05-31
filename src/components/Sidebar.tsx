@@ -101,13 +101,13 @@ export default function Sidebar() {
             <li className="text-sm flex items-center cursor-pointer  p-2 hover:bg-light-white rounded-md mt-2">
               <a href="My_salary" className="flex items-center hover:underline">
                 <CiMoneyCheck1 className="mr-4 text-gray-200 float-left block text-2xl" />
-                <Link to="/My_salary" className="hidden sm:block">
+                <Link to="/Salary" className="hidden sm:block">
                   <span
                     className={`text-base font-medium flex-1 ${
                       !open && "hidden"
                     }`}
                   >
-                    My Salary
+                    Salary
                   </span>
                 </Link>
               </a>

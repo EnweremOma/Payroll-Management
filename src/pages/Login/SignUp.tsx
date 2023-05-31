@@ -1,48 +1,34 @@
 import { useState } from "react";
 import { SignUpInput } from "../../interfaces/SignUp";
-import { E_CATEGORY } from "../../interfaces/User";
-import axios from "axios";
-//import { BASE_URL } from "../../routes/useUrls";
+import api from "../../helpers/api/useEmployee";
 
 const defaultFormData: SignUpInput = {
   firstName: "",
   lastName: "",
   email: "",
   phoneNumber: "",
-  category: E_CATEGORY.STUDENT,
-  department: "",
-  courseTitle: "",
+  confirmPassword: "",
 };
 
 const SignUp = () => {
   const [registrationData, setRegistrationData] = useState(defaultFormData);
-  const {
-    firstName,
-    lastName,
-    email,
-    phoneNumber,
-    category,
-    department,
-    courseTitle,
-  } = registrationData;
+  const { firstName, lastName, email, phoneNumber, confirmPassword } =
+    registrationData;
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRegistrationData({ ...registrationData, [e.target.id]: e.target.value });
   };
-  //"http://localhost:8000/users/createUser"
-  // const createUserUrl = `${BASE_URL}/users/createUser`;
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(registrationData);
-    axios.post("http://localhost:8000/users/createUser", registrationData);
-    //e.target.reset();
+    api.post("/employees", registrationData);
   };
 
   return (
-    <div className="h-screen bg-payroll-lilac bg-cover bg-gray-900/10 z-10">
-      <div className="w-2/4">
+    <div className="h-screen bg-payroll-lilac content-center px-96 pt-24">
         <div className="text-center">
-          <h2 className="text-payroll-purple font-bold text-3xl py-6">
+          <h2 className="text-payroll-purple font-bold text-5xl py-6">
             Sign Up!
           </h2>
         </div>
@@ -112,7 +98,7 @@ const SignUp = () => {
               Phone Number:
             </label>
             <input
-              type="phoneNumber"
+              type="number"
               id="phoneNumber"
               name="phoneNumber"
               placeholder="phoneNumber"
@@ -122,63 +108,38 @@ const SignUp = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
+
           <div className="mb-4 mx-8">
             <label
-              htmlFor="category"
+              htmlFor="password"
               className="block text-payroll-purple font-medium mb-2"
             >
-              Category:
-            </label>
-            <select
-              id="category"
-              name="category"
-              placeholder=""
-              value={category}
-              required
-              onChange={(e) => e.target.value}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            >
-              <option>Select category</option>
-              <option value="student">Student</option>
-              <option value="lecturer">Lecturer</option>
-              <option value="admin">Admin</option>
-              <option value="guest">Guest</option>
-            </select>
-          </div>
-          <div className="mb-4 mx-8">
-            <label
-              htmlFor="department"
-              className="block text-payroll-purple font-medium mb-2"
-            >
-              Department:
+              Password:
             </label>
             <input
-              type="department"
-              id="department"
-              name="department"
-              placeholder="Department"
-              value={department}
-              required
-              onChange={onChange}
+              type="password"
+              id="password"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="•••••••••"
+              required
             />
           </div>
+
           <div className="mb-4 mx-8">
             <label
-              htmlFor="courseTitle"
+              htmlFor="confirmPassword"
               className="block text-payroll-purple font-medium mb-2"
             >
-              Course Title:
+              Confirm password:
             </label>
             <input
-              type="courseTitle"
-              id="courseTitle"
-              name="courseTitle"
-              placeholder="Course title"
-              value={courseTitle}
+              type="password"
+              id="confirmPassword"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="•••••••••"
+              value={confirmPassword}
               required
               onChange={onChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
           <div className="">
@@ -190,8 +151,6 @@ const SignUp = () => {
             </button>
           </div>
         </form>
-      </div>
-      <div className="bg-student-img bg-no-repeat bg-cover flex bg-gray-900/10 z-10"></div>
     </div>
   );
 };

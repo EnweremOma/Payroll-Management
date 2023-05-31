@@ -91,26 +91,6 @@
       "Salary": 921168
     },
     {
-      "id": 10,
-      "firstName": "Brnaba",
-      "lastName": "Povey",
-      "email": "bpovey9@census.gov",
-      "jobTitle": "Analog Circuit Design manager",
-      "employeeId": "0172KT",
-      "department": "Accounting",
-      "Salary": 756485
-    },
-    {
-      "id": 11,
-      "firstName": "Dianna",
-      "lastName": "Tompion",
-      "email": "dtompiona@nasa.gov",
-      "jobTitle": "Assistant Media Planner",
-      "employeeId": "0172KT",
-      "department": "Legal",
-      "Salary": 920690
-    },
-    {
       "id": 12,
       "firstName": "Calhoun",
       "lastName": "Feldberger",
@@ -140,26 +120,7 @@
       "department": "Services",
       "Salary": 380841
     },
-    {
-      "id": 15,
-      "firstName": "Burk",
-      "lastName": "Adkin",
-      "email": "badkine@g.co",
-      "jobTitle": "VP Quality Control",
-      "employeeId": "0172KT",
-      "department": "Training",
-      "Salary": 781849
-    },
-    {
-      "id": 16,
-      "firstName": "Rosemaria",
-      "lastName": "Ankrett",
-      "email": "rankrettf@homestead.com",
-      "jobTitle": "Graphic Designer",
-      "employeeId": "0172KT",
-      "department": "Marketing",
-      "Salary": 691850
-    },
+
     {
       "firstName": "John",
       "lastName": "Doe",
@@ -176,7 +137,159 @@
       "grossSalary": "100000",
       "confirmPassword": "Password@123",
       "d0b": "2023-05-31",
-      "id": 17
+      "id": 15
+    }
+  ],
+  "salarys": [
+    {
+      "id": 1,
+      "firstName": "Carin",
+      "lastName": "Sturdy",
+      "level": "Chinalaurel",
+      "employeeId": "0867YT",
+      "month": "Road",
+      "paidDays": "289",
+      "basic": "$87484.39",
+      "transport": "$213.28",
+      "housing": "$44717.67",
+      "pension": "$40332.02",
+      "tax": "$7743.01",
+      "total": "$204302.17"
+    },
+    {
+      "id": 2,
+      "firstName": "Sammy",
+      "lastName": "Lawly",
+      "level": "Spiderlily",
+      "employeeId": "0867YT",
+      "month": "Drive",
+      "paidDays": "713",
+      "basic": "$77750.39",
+      "transport": "$541.81",
+      "housing": "$61315.72",
+      "pension": "$50846.32",
+      "tax": "$1056.63",
+      "total": "$416712.70"
+    },
+    {
+      "id": 3,
+      "firstName": "Rowney",
+      "lastName": "Tanslie",
+      "level": "Shorthook",
+      "employeeId": "0867YT",
+      "month": "Center",
+      "paidDays": "1411",
+      "basic": "$85514.56",
+      "transport": "$736.41",
+      "housing": "$48777.09",
+      "pension": "$3507.56",
+      "tax": null,
+      "total": "$267537.25"
+    },
+    {
+      "id": 4,
+      "firstName": "Drucie",
+      "lastName": "Lawford",
+      "level": "Sticky",
+      "employeeId": "0867YT",
+      "month": "Way",
+      "paidDays": "461",
+      "basic": "$90255.46",
+      "transport": "$945.38",
+      "housing": "$10463.04",
+      "pension": "$21109.79",
+      "tax": "$4078.71",
+      "total": "$88476.19"
+    },
+    {
+      "id": 5,
+      "firstName": "Yardley",
+      "lastName": "Clethro",
+      "level": "California",
+      "employeeId": "0867YT",
+      "month": "Alley",
+      "paidDays": "1178",
+      "basic": "$11945.10",
+      "transport": "$177.01",
+      "housing": "$55148.71",
+      "pension": "$74048.01",
+      "tax": null,
+      "total": "$953708.07"
+    },
+    {
+      "id": 6,
+      "firstName": "Lancelot",
+      "lastName": "Pitcher",
+      "level": "Common Rush",
+      "employeeId": "0867YT",
+      "month": "Lane",
+      "paidDays": "146",
+      "basic": "$94772.74",
+      "transport": "$988.72",
+      "housing": "$800.60",
+      "pension": "$44786.39",
+      "tax": "$732.64",
+      "total": "$671393.94"
+    },
+    {
+      "id": 7,
+      "firstName": "Annalise",
+      "lastName": "Coogan",
+      "level": "Rough",
+      "employeeId": "0867YT",
+      "month": "Lane",
+      "paidDays": "0",
+      "basic": "$71029.97",
+      "transport": "$927.74",
+      "housing": "$40593.99",
+      "pension": "$96525.36",
+      "tax": null,
+      "total": "$686397.17"
+    },
+    {
+      "id": 8,
+      "firstName": "Olin",
+      "lastName": "Stealy",
+      "level": "Snakelily",
+      "employeeId": "0867YT",
+      "month": "Pass",
+      "paidDays": "344",
+      "basic": "$80024.37",
+      "transport": "$315.35",
+      "housing": "$53480.13",
+      "pension": "$51312.21",
+      "tax": "$9154.37",
+      "total": "$157970.49"
+    },
+    {
+      "id": 9,
+      "firstName": "Clare",
+      "lastName": "Luney",
+      "level": "Macoun",
+      "employeeId": "0867YT",
+      "month": "Avenue",
+      "paidDays": "15",
+      "basic": "$37030.42",
+      "transport": "$577.47",
+      "housing": "$22787.18",
+      "pension": "$99227.35",
+      "tax": null,
+      "total": "$254964.33"
+    },
+    {
+      "id": 10,
+      "firstName": "Harriette",
+      "lastName": "Pund",
+      "level": "Red",
+      "employeeId": "0867YT",
+      "month": "Hill",
+      "paidDays": "879",
+      "basic": "$13530.24",
+      "transport": "$12.60",
+      "housing": "$4312.13",
+      "pension": "$87591.91",
+      "tax": "$6610.47",
+      "total": "$45270.48"
     }
   ]
 }

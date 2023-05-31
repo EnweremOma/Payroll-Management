@@ -1,12 +1,13 @@
-export interface Salary {
+export interface SalaryInput {
   firstName: string;
   lastName: string;
   level: string;
+  employeeId: string;
   month: string;
   paidDays: string;
-  basic: number;
+  basic: string;
   transport: string;
-  housing: string;
   pension: string;
-  tax: number;
+  tax: string;
+  total: string;
 }

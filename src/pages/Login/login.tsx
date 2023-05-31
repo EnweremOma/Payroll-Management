@@ -12,8 +12,13 @@ const Login: React.FC = () => {
   return (
     <div className="h-screen bg-payroll-lilac flex items-center justify-center">
       <div className="place-content-center px-6 rounded-lg sm:px-10 mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="text-center">
+          <h2 className="text-payroll-purple font-bold text-5xl py-6">
+            Log In
+          </h2>
+        </div>
         <form
-          className="bg-white-bg p-6 rounded-lg border-4 border-purple-900"
+          className="bg-white p-6 rounded-lg border-4 border-purple-900"
           onSubmit={handleSubmit}
         >
           <div className="mb-4">

@@ -5,20 +5,20 @@ import api from "../../helpers/api/useEmployee";
 import { Link, useNavigate } from "react-router-dom";
 import { FiEye, FiTrash, FiEdit } from "react-icons/fi";
 
-export default function Employee() {
-  const [employees, setEmployees] = useState<any>([]);
+export default function Salary() {
+  const [salary, setSalary] = useState<any>([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const employeesPerPage = 10;
+  const salaryPerPage = 10;
 
   const handlePageChange = (selectedItem: { selected: number }) => {
     setCurrentPage(selectedItem.selected);
   };
 
   useEffect(() => {
-    const fetchEmployees = async () => {
+    const fetchSalary = async () => {
       try {
-        const response = await api.get("/employees");
-        setEmployees(response.data);
+        const response = await api.get("/salarys");
+        setSalary(response.data);
       } catch (err: any) {
         if (err.response) {
           console.error(err.response.data);
@@ -30,19 +30,19 @@ export default function Employee() {
       }
     };
 
-    fetchEmployees();
+    fetchSalary();
   }, []);
 
   const navigate = useNavigate();
 
   const handleDelete = async (id: number) => {
     try {
-      await api.delete(`/employee/${id}`);
-      const updatedEmployees = employees.filter(
+      await api.delete(`/salarys/${id}`);
+      const updatedSalary = salary.filter(
         (employee: any) => employee.id !== id
       );
-      setEmployees(updatedEmployees);
-      navigate("/employees");
+      setSalary(updatedSalary);
+      navigate("/salarys");
     } catch (err: any) {
       console.log(`Error: ${err.message}`);
     }
@@ -53,14 +53,14 @@ export default function Employee() {
       <div className="w-full overflow-auto">
         <div className="justify-between flex pb-10 ml-6 pt-4">
           <h1 className="text-payroll-purple text-2xl sm:text-3xl font-bold">
-            Employee List
+            Salary Report
           </h1>
 
           <Link
-            to="/add_employee"
+            to="/add_Salary"
             className="bg-payroll-purple items-center mr-6 text-white font-bold px-4 py-2 rounded-lg"
           >
-            Add Employee
+            Add Salary
           </Link>
         </div>
 
@@ -71,13 +71,18 @@ export default function Employee() {
                 <thead className="text-justify bg-payroll-purple text-white">
                   <th className="px-6 py-4 whitespace-nowrap">Employee ID</th>
                   <th className="px-6 py-4 whitespace-nowrap">Name</th>
-                  <th className="px-6 py-4 whitespace-nowrap">Email</th>
-                  <th className="px-6 py-4 whitespace-nowrap">Job title</th>
-                  <th className="px-6 py-4 whitespace-nowrap">Department</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Level</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Month</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Paid Days</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Basic</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Transport</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Pension</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Tax</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Total</th>
                   <th className="px-6 py-4 whitespace-nowrap">Action</th>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {employees?.map((item: any, index: any) => (
+                  {salary?.map((item: any, index: any) => (
                     <tr
                       key={index}
                       className="hover:bg-gray-100 cursor-pointer"
@@ -97,18 +102,43 @@ export default function Employee() {
 
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm font-medium text-gray-500">
-                          {item.email}
+                          {item.level}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm font-medium text-gray-500">
+                          {item.month}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm font-medium text-gray-500">
+                          {item.paidDays}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm font-medium text-gray-500">
+                          {item.basic}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm font-medium text-gray-500">
+                          {item.transport}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm font-medium text-gray-500">
+                          {item.pension}
                         </div>
                       </td>
 
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm font-medium text-gray-500">
-                          {item.jobTitle}
+                          {item.tax}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm font-medium text-gray-500">
-                          {item.department}
+                          {item.total}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
@@ -117,7 +147,7 @@ export default function Employee() {
                           <FiEdit className="ml-4 text-green-600" />
                           <FiTrash
                             className="ml-4 text-red-600"
-                            onClick={() => handleDelete(employees.id)}
+                            onClick={() => handleDelete(salary.id)}
                           />
                         </div>
                       </td>
@@ -130,8 +160,8 @@ export default function Employee() {
         </div>
         <div className="align-baseline">
           <Pagination
-            items={employees}
-            itemsPerPage={employeesPerPage}
+            items={salary}
+            itemsPerPage={salaryPerPage}
             onPageChange={handlePageChange}
             currentPage={currentPage}
           />

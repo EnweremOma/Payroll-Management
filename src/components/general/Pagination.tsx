@@ -50,11 +50,13 @@ const Pagination: React.FC<Props> = ({
         breakLinkClassName={
           "rounded-md bg-payroll-purple text-white hover:text-payroll-purple hover:bg-payroll-lilac px-3 py-2"
         }
-        activeClassName={"bg-blue-400 text-white font-bold"}
+        activeClassName={"text-white font-bold"}
         activeLinkClassName={
-          "rounded-md bg-blue-400 hover:bg-blue-500 px-3 py-2"
+          "rounded-md hover:bg-payroll-lilac px-3 py-2"
         }
-        forcePage={currentPage}
+        forcePage={
+          currentPage < Math.ceil(items.length / itemsPerPage) ? currentPage : 0
+        }
       />
     </>
   );

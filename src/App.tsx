@@ -6,8 +6,9 @@ import Login from "./pages/Login/login";
 import MyAccount from "./pages/MyAccount/MyAccount";
 import MySalary from "./pages/MySalary/MySalary";
 import Settings from "./pages/Settings/Settings";
-import SignUp from './pages/Login/SignUp';
-import Employee from './pages/Employee/EmployeeList';
+import SignUp from "./pages/Login/SignUp";
+import Employee from "./pages/Employee/EmployeeList";
+import AddEmployee from "./components/specific/Employee/AddEmplyee";
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/my_account" element={<MyAccount />} />
           <Route path="/employees" element={<Employee />} />
+          <Route path="/add_employee" element={<AddEmployee />} />
           <Route path="/my_salary" element={<MySalary />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>

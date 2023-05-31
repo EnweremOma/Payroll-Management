@@ -16,3 +16,14 @@ export interface ICustomButtonProps
   styles?: string;
   isLoading?: boolean;
 }
+
+export type ToastProps = {
+  message: string;
+  position:
+    | "bottom-center"
+    | "bottom-left"
+    | "bottom-right"
+    | "top-center"
+    | "top-left"
+    | "top-right";
+};

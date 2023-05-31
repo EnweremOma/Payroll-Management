@@ -16,38 +16,38 @@ export default function Home() {
   let [searchParams] = useSearchParams();
   const selectedUserId = searchParams.get("userId");
 
-  useEffect(function () {
-    axios
-      .get("http://localhost:8000/users/getAllUsers")
-      .then((response) => {
-        setUsers(response.data.users);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  // useEffect(function () {
+  //   axios
+  //     .get("http://localhost:8000/users/getAllUsers")
+  //     .then((response) => {
+  //       setUsers(response.data.users);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
 
-    // Fetch data for items array
-    axios
-      .get(`http://localhost:8000/items`)
-      .then((response) => {
-        setItems(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  //   // Fetch data for items array
+  //   axios
+  //     .get(`http://localhost:8000/items`)
+  //     .then((response) => {
+  //       setItems(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
-  useEffect(
-    function () {
-      axios
-        .get(`http://localhost:8000/users/getSingleUser/${selectedUserId}`)
-        .then((response) => {
-          setProfile(response.data.user);
-        })
-        .then((error) => console.log(error));
-    },
-    [selectedUserId]
-  );
+  // useEffect(
+  //   function () {
+  //     axios
+  //       .get(`http://localhost:8000/users/getSingleUser/${selectedUserId}`)
+  //       .then((response) => {
+  //         setProfile(response.data.user);
+  //       })
+  //       .then((error) => console.log(error));
+  //   },
+  //   [selectedUserId]
+  // );
 
   const handlePageChange = (selectedItem: { selected: number }) => {
     setCurrentPage(selectedItem.selected);

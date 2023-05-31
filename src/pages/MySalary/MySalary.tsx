@@ -1,6 +1,6 @@
 import React from "react";
 import ListCard from "../../components/ListCard";
-import { staffList } from "../../../Data/Staff";
+// import { staffList } from "../../../Data/Staff";
 import Layout from "../../components/Layout";
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
           </h1>
         </div>
         <div className="bg-white mx-6 rounded-md border-2 border-payroll-purple flex">
-          <div>
+          {/* <div>
             {staffList?.map((staffList, index) => (
               <ListCard
                 firstName={staffList.firstName}
@@ -24,7 +24,7 @@ export default function Home() {
                 category={staffList.category}
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </Layout>

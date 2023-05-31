@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import Pagination from "../../components/general/Pagination";
-import { PrimaryButton } from "../../components/general/CustomButton";
-import { format } from "date-fns";
 import api from "../../helpers/api/useEmployee";
+import { Link, useNavigate } from "react-router-dom";
+import { FiEye, FiTrash, FiEdit } from "react-icons/fi";
 
 export default function Employee() {
   const [employees, setEmployees] = useState<any>([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const employeesPerPage = 7;
+  const employeesPerPage = 10;
 
   const handlePageChange = (selectedItem: { selected: number }) => {
     setCurrentPage(selectedItem.selected);
@@ -28,24 +28,105 @@ export default function Employee() {
           console.log(`Error: ${err.message}`);
         }
       }
-    }
-    
+    };
+
     fetchEmployees();
   }, []);
 
+  const navigate = useNavigate();
+
+  const handleDelete = async (id: number) => {
+    try {
+      await api.delete(`/employee/${id}`);
+      const updatedEmployees = employees.filter(
+        (employee: any) => employee.id !== id
+      );
+      setEmployees(updatedEmployees);
+      navigate("/employees");
+    } catch (err: any) {
+      console.log(`Error: ${err.message}`);
+    }
+  };
+
   return (
     <Layout>
-      <div className="w-full">
-        <div className="pb-4 z-10 ml-6 pt-4">
-          <h1 className="text-payroll-purple text-3xl font-bold">
+      <div className="w-full overflow-auto">
+        <div className="justify-between flex pb-10 ml-6 pt-4">
+          <h1 className="text-payroll-purple text-2xl sm:text-3xl font-bold">
             Employee List
           </h1>
+
+          <Link
+            to="/add_employee"
+            className="bg-payroll-purple items-center mr-6 text-white font-bold px-4 py-2 rounded-lg"
+          >
+            Add Employee
+          </Link>
         </div>
-        <div className="bg-white mx-6 rounded-md border-2 border-payroll-purple flex">
-          <h1>
-            hello <br />
-            fgdhgfjhgkjkf
-          </h1>
+
+        <div className="bg-white mx-6 rounded-md border-2 border-payroll-purple flex overflow-x-scroll">
+          <div className="w-full overflow-x-auto">
+            <div className="align-middle inline-block min-w-full shadow-md">
+              <table className="min-w-full">
+                <thead className="text-justify bg-payroll-purple text-white">
+                  <th className="px-6 py-4 whitespace-nowrap">Employee ID</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Name</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Email</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Job title</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Department</th>
+                  <th className="px-6 py-4 whitespace-nowrap">Action</th>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {employees?.map((item: any, index: any) => (
+                    <tr
+                      key={index}
+                      className="hover:bg-gray-100 cursor-pointer"
+                    >
+                      <td className="text-justify px-6 py-4 whitespace-nowrap">
+                        <div className="flex text-sm font-medium text-gray-500">
+                          {item.employeeId}
+                        </div>
+                      </td>
+
+                      <td className="text-justify px-6 py-4 whitespace-nowrap">
+                        <div className="flex text-sm font-medium text-gray-500">
+                          {item.lastName}
+                          <h1 className="ml-2">{item.firstName}</h1>
+                        </div>
+                      </td>
+
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm font-medium text-gray-500">
+                          {item.email}
+                        </div>
+                      </td>
+
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm font-medium text-gray-500">
+                          {item.jobTitle}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm font-medium text-gray-500">
+                          {item.department}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="flex text-md font-medium text-gray-500">
+                          <FiEye />
+                          <FiEdit className="ml-4 text-green-600" />
+                          <FiTrash
+                            className="ml-4 text-red-600"
+                            onClick={() => handleDelete(employees.id)}
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
         <div className="align-baseline">
           <Pagination
@@ -59,57 +140,3 @@ export default function Employee() {
     </Layout>
   );
 }
-
-<div className="bg-twinklly-light-blue sm:min-h-screen w-full p-4 sm:p-10">
-  <div className="pb-10 justify-between flex">
-    <div>
-      <h1 className="font-bold text-xl sm:text-3xl">History</h1>
-      <h6 className="pt-2 font-medium text-base sm:text-lg">Account History</h6>
-    </div>
-    <div className="float-right pt-6">
-      <PrimaryButton className="bg-twinklly-dark-blue items-center">
-        <img src="/svgs/Filter.svg" alt="filter" />
-        <h2 className="text-white text-base pl-3">Filter</h2>
-      </PrimaryButton>
-    </div>
-  </div>
-
-  <div
-    className="mt-[1.875rem] rounded-[8px] gap-[10px] w-full py-[1.126rem] px-2 sm:px-8
-        bg-white rounded[10px] shadow-lg shadow-greyIsh-700"
-  >
-    <div className="w-full overflow-x-auto">
-      <div className="align-middle inline-block min-w-full shadow-md overflow-hidden">
-        <table className="min-w-full">
-          <thead className="text-justify">
-            <th className="px-6 py-4 whitespace-nowrap">Event Type</th>
-            <th className="px-6 py-4 whitespace-nowrap">Description</th>
-            <th className="px-6 py-4 whitespace-nowrap">Date&Time</th>
-            <th className="px-6 py-4 whitespace-nowrap">Action</th>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {data?.map((item: any, index: any) => (
-              <tr key={index} className="hover:bg-gray-100 cursor-pointer">
-                <td className="text-justify px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm font-medium text-gray-500">
-                    {item?.eventType}
-                  </div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm font-medium text-gray-500">
-                    {item.details}
-                  </div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm font-medium text-gray-500">
-                    {format(new Date(item?.createdAt as Date), "dd-MM-yyyy")}
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>;

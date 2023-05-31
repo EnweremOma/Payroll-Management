@@ -627,9 +627,6 @@ video {
 .w-full {
   width: 100%;
 }
-.w-96 {
-  width: 24rem;
-}
 .min-w-full {
   min-width: 100%;
 }
@@ -675,6 +672,9 @@ video {
 .place-content-center {
   place-content: center;
 }
+.place-items-center {
+  place-items: center;
+}
 .content-center {
   align-content: center;
 }
@@ -717,20 +717,11 @@ video {
 .overflow-hidden {
   overflow: hidden;
 }
-.overflow-scroll {
-  overflow: scroll;
-}
 .overflow-x-auto {
   overflow-x: auto;
 }
-.overflow-y-auto {
-  overflow-y: auto;
-}
 .overflow-x-scroll {
   overflow-x: scroll;
-}
-.overflow-y-scroll {
-  overflow-y: scroll;
 }
 .scroll-smooth {
   scroll-behavior: smooth;
@@ -781,10 +772,6 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(88 28 135 / var(--tw-border-opacity));
 }
-.bg-blue-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
-}
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -813,17 +800,11 @@ video {
 .bg-cover {
   background-size: cover;
 }
-.bg-no-repeat {
-  background-repeat: no-repeat;
-}
 .fill-payroll-purple {
   fill: #611076;
 }
 .fill-white {
   fill: #fff;
-}
-.fill-red-600 {
-  fill: #dc2626;
 }
 .p-2 {
   padding: 0.5rem;
@@ -842,15 +823,6 @@ video {
 }
 .p-\[0\.1rem\] {
   padding: 0.1rem;
-}
-.p-9 {
-  padding: 2.25rem;
-}
-.p-96 {
-  padding: 24rem;
-}
-.p-32 {
-  padding: 8rem;
 }
 .px-2 {
   padding-left: 0.5rem;
@@ -872,6 +844,10 @@ video {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+.px-96 {
+  padding-left: 24rem;
+  padding-right: 24rem;
+}
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -884,28 +860,23 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-.px-32 {
-  padding-left: 8rem;
-  padding-right: 8rem;
-}
-.px-96 {
-  padding-left: 24rem;
-  padding-right: 24rem;
-}
 .pb-10 {
   padding-bottom: 2.5rem;
 }
 .pb-4 {
   padding-bottom: 1rem;
 }
-.pl-3 {
-  padding-left: 0.75rem;
-}
 .pt-2 {
   padding-top: 0.5rem;
 }
+.pt-24 {
+  padding-top: 6rem;
+}
 .pt-3 {
   padding-top: 0.75rem;
+}
+.pt-32 {
+  padding-top: 8rem;
 }
 .pt-4 {
   padding-top: 1rem;
@@ -915,9 +886,6 @@ video {
 }
 .pt-8 {
   padding-top: 2rem;
-}
-.pt-24 {
-  padding-top: 6rem;
 }
 .text-center {
   text-align: center;
@@ -943,6 +911,10 @@ video {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -958,14 +930,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 .font-bold {
   font-weight: 700;
@@ -998,21 +962,21 @@ video {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
+.text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
+}
 .text-payroll-purple {
   --tw-text-opacity: 1;
   color: rgb(97 16 118 / var(--tw-text-opacity));
-}
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
-.text-green-600 {
+.text-white {
   --tw-text-opacity: 1;
-  color: rgb(22 163 74 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -1052,10 +1016,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(37 3 46 / var(--tw-bg-opacity));
 }
-.hover\:bg-blue-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -1070,10 +1030,6 @@ video {
 .hover\:bg-purple-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(233 213 255 / var(--tw-bg-opacity));
-}
-.hover\:bg-payroll-purple:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(97 16 118 / var(--tw-bg-opacity));
 }
 .hover\:bg-opacity-75:hover {
   --tw-bg-opacity: 0.75;
@@ -1147,11 +1103,6 @@ video {
   .sm\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
-  }
-
-  .sm\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 
   .sm\:text-3xl {

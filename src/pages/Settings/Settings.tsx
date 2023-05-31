@@ -10,8 +10,7 @@ export default function Settings() {
         </div>
         <div className="bg-white mx-6 rounded-md border-2 border-payroll-purple flex">
           <h1>
-            hello <br />
-            fgdhgfjhgkjkf
+            Coming soon
           </h1>
         </div>
       </div>

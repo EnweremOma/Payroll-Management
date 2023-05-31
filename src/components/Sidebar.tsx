@@ -1,14 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  FiHome,
-  FiMessageSquare,
-  FiUsers,
-  FiUser,
-  FiBook,
-  FiSettings,
-} from "react-icons/fi";
+import { FiHome, FiUser, FiUsers, FiSettings } from "react-icons/fi";
 import { BsArrowLeftShort, BsChatDots, BsSearch } from "react-icons/bs";
+import { CiMoneyCheck1 } from "react-icons/ci";
 
 export default function Sidebar() {
   const [open, setOpen] = useState(true);
@@ -71,58 +65,49 @@ export default function Sidebar() {
               </a>
             </li>
             <li className="text-sm flex items-center cursor-pointer p-2 hover:bg-light-white rounded-md mt-2">
-              <a href="messages" className="flex items-center hover:underline">
-                <FiMessageSquare className="mr-4 text-gray-200 float-left block text-2xl" />
-                <Link to="/Messages" className="hidden sm:block">
+              <a
+                href="employees"
+                className="flex items-center hover:underline"
+              >
+                <FiUsers className="mr-4 text-gray-200 float-left block text-2xl" />
+                <Link to="/employees" className="hidden sm:block">
                   <span
                     className={`text-base font-medium flex-1 ${
                       !open && "hidden"
                     }`}
                   >
-                    Messages
+                    Employees 
+                  </span>
+                </Link>
+              </a>
+            </li>
+            <li className="text-sm flex items-center cursor-pointer p-2 hover:bg-light-white rounded-md mt-2">
+              <a
+                href="my_account"
+                className="flex items-center hover:underline"
+              >
+                <FiUser className="mr-4 text-gray-200 float-left block text-2xl" />
+                <Link to="/my_account" className="hidden sm:block">
+                  <span
+                    className={`text-base font-medium flex-1 ${
+                      !open && "hidden"
+                    }`}
+                  >
+                    My Account
                   </span>
                 </Link>
               </a>
             </li>
             <li className="text-sm flex items-center cursor-pointer  p-2 hover:bg-light-white rounded-md mt-2">
-              <a href="staff" className="flex items-center hover:underline">
-                <FiUsers className="mr-4 text-gray-200 float-left block text-2xl" />
-                <Link to="/Staff" className="hidden sm:block">
+              <a href="My_salary" className="flex items-center hover:underline">
+                <CiMoneyCheck1 className="mr-4 text-gray-200 float-left block text-2xl" />
+                <Link to="/My_salary" className="hidden sm:block">
                   <span
                     className={`text-base font-medium flex-1 ${
                       !open && "hidden"
                     }`}
                   >
-                    Staff
-                  </span>
-                </Link>
-              </a>
-            </li>
-            <li className="text-sm flex items-center cursor-pointer p-2 hover:bg-light-white rounded-md mt-2">
-              <a href="student" className="flex items-center hover:underline">
-                <FiUser className="mr-4 text-gray-200 float-left block text-2xl" />
-                <Link to="/Students" className="hidden sm:block">
-                  <span
-                    className={`text-base font-medium flex-1 ${
-                      !open && "hidden"
-                    }`}
-                  >
-                    Students
-                  </span>
-                </Link>
-              </a>
-            </li>
-            <li className="text-sm flex items-center cursor-pointer p-2 hover:bg-light-white rounded-md mt-2">
-              <a href="groups" className="flex items-center hover:underline">
-                <FiBook className="mr-4 text-gray-200 float-left block text-2xl" />
-                <Link to="/Groups" className="hidden sm:block">
-                  <span
-                    className={`text-base font-medium flex-1 ${
-                      !open && "hidden"
-                    }`}
-                  >
-                    {" "}
-                    Groups
+                    My Salary
                   </span>
                 </Link>
               </a>
@@ -136,7 +121,6 @@ export default function Sidebar() {
                       !open && "hidden"
                     }`}
                   >
-                    {" "}
                     Settings
                   </span>
                 </Link>

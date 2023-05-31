@@ -1,4 +1,4 @@
-import { User } from "../interfaces/User";
+import { User } from "../src/interfaces/User";
 export const staffList = [
   {
     id: "1",

@@ -1,6 +1,6 @@
 import React from "react";
 import ListCard from "../../components/ListCard";
-import { staffList } from "../../Data/Staff";
+import { staffList } from "../../../Data/Staff";
 import Layout from "../../components/Layout";
 
 export default function Home() {

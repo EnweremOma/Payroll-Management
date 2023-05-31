@@ -1,12 +1,9 @@
 import React from "react";
 import {
   MdHome,
-  MdMessage,
   MdLogout,
   MdOutlineSettings,
-  MdPeopleOutline,
   MdPersonOutline,
-  MdOutlineGroups,
 } from "react-icons/md";
 
 export enum RoutePath {
@@ -14,10 +11,9 @@ export enum RoutePath {
   FORGOT_PASSWORD = "/forgot_password",
   SIGN_UP = "/sign_up",
   HOME = "/",
-  MESSAGES = "/messages",
-  STAFF = "/staff",
-  STUDENTS = "/students",
-  GROUPS = "/groups",
+  EMPLOYEES = "/employees",
+  MY_ACCOUNT = "/my_account",
+  MY_SALARY = "/my_salary",
   SETTINGS = "/settings",
   LOG_OUT = "/log_out",
 }
@@ -29,24 +25,14 @@ export const defaultSidebarNavItems: SidebarNavItem[] = [
     icon: MdHome,
   },
   {
-    name: "messages",
-    path: RoutePath.MESSAGES,
-    icon: MdMessage,
-  },
-  {
-    name: "staff",
-    path: RoutePath.STAFF,
-    icon: MdPeopleOutline,
-  },
-  {
-    name: "students",
-    path: RoutePath.STUDENTS,
+    name: "my_account",
+    path: RoutePath.MY_ACCOUNT,
     icon: MdPersonOutline,
   },
   {
-    name: "groups",
-    path: RoutePath.GROUPS,
-    icon: MdOutlineGroups,
+    name: "my_salary",
+    path: RoutePath.MY_SALARY,
+    icon: MdPersonOutline,
   },
   {
     name: "settings",
@@ -57,7 +43,7 @@ export const defaultSidebarNavItems: SidebarNavItem[] = [
     name: "logout",
     path: RoutePath.LOG_OUT,
     icon: MdLogout,
-  }
+  },
 ];
 
 export interface SidebarNavItem {
